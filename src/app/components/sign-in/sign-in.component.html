@@ -1,61 +1,28 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Sign In</h3>
-      <div class="formGroup">
-        <input
-          type="text"
-          class="formControl"
-          placeholder="Username"
-          #userName
-          required
-        />
+<div class="card">
+  <div class="grid">
+    <div class="col-5 flex align-items-center justify-content-center">
+      <div class="p-fluid">
+        <div class="field">
+          <label>E-mail :</label>
+          <input type="text" pInputText placeholder="Email" #userName />
+        </div>
+        <div class="field">
+          <label>Password :</label>
+          <input
+            type="password"
+            pInputText
+            placeholder="Password"
+            #userPassword
+          />
+        </div>
+        <div>
+          <p-button
+            label="Login"
+            (click)="authService.signIn(userName.value, userPassword.value)"
+          >
+          </p-button>
+        </div>
       </div>
-      <div class="formGroup">
-        <input
-          type="password"
-          class="formControl"
-          placeholder="Password"
-          #userPassword
-          required
-        />
-      </div>
-      <!-- Calling SignIn Api from AuthService -->
-      <div class="formGroup">
-        <input
-          type="button"
-          class="btn btnPrimary"
-          value="Log in"
-          (click)="authService.signIn(userName.value, userPassword.value)"
-        />
-      </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-      <!-- Calling GoogleAuth Api from AuthService -->
-      <div class="formGroup">
-        <button
-          type="button"
-          class="btn googleBtn"
-          (click)="authService.googleAuth()"
-        >
-          <i class="fab fa-google-plus-g"></i>
-          Log in with Google
-        </button>
-      </div>
-      <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
-      </div>
-    </div>
-    <div class="redirectToLogin">
-      <span
-        >Don't have an account?<span
-          class="redirect"
-          routerLink="/register-user"
-        >
-          Sign Up</span
-        ></span
-      >
     </div>
   </div>
 </div>

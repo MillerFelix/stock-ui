@@ -1,0 +1,30 @@
+.card {
+  font-style: oblique;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
+  margin-top: 100px;
+  text-align: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  background-image: url("../../../assets/WATERMARK_08_15_2023_1692130223578.png");
+  background-repeat: round;
+}
+
+.grid {
+  align-items: center;
+  margin-top: 100px;
+}
+
+.field {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-right: 10px;
+}
