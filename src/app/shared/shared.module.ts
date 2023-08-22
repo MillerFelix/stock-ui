@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccordionModule } from 'primeng/accordion';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -45,6 +45,8 @@ import { TabViewModule } from 'primeng/tabview';
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
+import { ChartModule } from 'primeng/chart';
+import { CardModule } from 'primeng/card';
 
 import { ImageModule } from 'primeng/image';
 @NgModule({
@@ -96,6 +98,8 @@ import { ImageModule } from 'primeng/image';
     MultiSelectModule,
     DataViewModule,
     InputTextareaModule,
+    ChartModule,
+    CardModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -144,6 +148,8 @@ import { ImageModule } from 'primeng/image';
     ConfirmDialogModule,
     SidebarModule,
     ConfirmPopupModule,
+    ChartModule,
+    CardModule,
   ],
   providers: [MessageService, ConfirmationService, DialogService],
 })

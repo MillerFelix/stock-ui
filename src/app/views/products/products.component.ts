@@ -25,7 +25,7 @@ export class ProductsComponent implements OnInit {
 
   loadProducts(): void {
     this.productsService
-      .getProducts()
+      .getCombinationProducts()
       .subscribe((data) => (this.products = data));
   }
 

@@ -10,26 +10,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ProductsComponent } from './components/products/products.component';
-import { TypesComponent } from './components/types/types.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { ProductsComponent } from './views/products/products.component';
 import { AuthService } from './shared/services/auth.service';
-import { FooterComponent } from './views/footer/footer.component';
+import { SharedModule } from './shared/shared.module';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SuppliersComponent } from './views/suppliers/suppliers.component';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    SharedModule,
     AppRoutingModule,
+    HeaderComponent,
     ProductsComponent,
-    TypesComponent, FooterComponent,
+    FooterComponent,
     DashboardComponent,
+    HeaderComponent,
+    SuppliersComponent,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    SharedModule,
+    HttpClientModule,
   ],
   providers: [importProvidersFrom(HttpClientModule), AuthService],
   bootstrap: [AppComponent],

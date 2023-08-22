@@ -1,3 +1,4 @@
+import { Supplier } from './supplier';
 import { Type } from './type';
 
 export interface Product {
@@ -5,7 +6,7 @@ export interface Product {
   name?: string;
   type?: Type;
   value?: number;
-  supplier?: string;
+  supplier?: Supplier;
   amount?: number;
   description?: string;
 }

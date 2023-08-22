@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
-
 import { AuthService } from './../../shared/services/auth.service';
 
 @Component({

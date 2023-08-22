@@ -1,6 +1,5 @@
 import { Injectable, NgZone, inject } from '@angular/core';
 import { User } from '../services/user';
-import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
   AngularFirestore,
@@ -48,7 +47,6 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        this.sendVerificationMail();
         this.setUserData(result.user);
       })
       .catch((error) => {
@@ -56,36 +54,9 @@ export class AuthService {
       });
   }
 
-  sendVerificationMail() {
-    return this.afAuth.currentUser
-      .then((u: any) => u.sendEmailVerification())
-      .then(() => {
-        this.router.navigate(['verify-email-address']);
-      });
-  }
-
-  forgotPassword(passwordResetEmail: string) {
-    return this.afAuth
-      .sendPasswordResetEmail(passwordResetEmail)
-      .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
-      })
-      .catch((error) => {
-        window.alert(error);
-      });
-  }
-
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
     return user !== null && user.emailVerified !== false ? true : false;
-  }
-
-  googleAuth() {
-    return this.authLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      if (res) {
-        this.router.navigate(['dashboard']);
-      }
-    });
   }
 
   authLogin(provider: any) {

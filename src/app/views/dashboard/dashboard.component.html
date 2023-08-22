@@ -1,0 +1,28 @@
+<div>
+  <p-button>
+    <a class="nav-link" (click)="authService.signOut()"> Sair </a>
+  </p-button>
+</div>
+
+<div class="container">
+  <p-card>
+    <div class="graphicValuesByType">
+      <h3>Quantidade por Tipo de Produto</h3>
+      <p-chart
+        type="bar"
+        [data]="dataGraphAmountByType"
+        [options]="optionsGraphAmountByType"
+      ></p-chart>
+    </div>
+  </p-card>
+  <p-card>
+    <div class="graphicAmountByType">
+      <h3>Valor por Tipo de Produto</h3>
+      <p-chart
+        type="doughnut"
+        [data]="dataGraphValuesByType"
+        [options]="optionsGraphValuesByType"
+      ></p-chart>
+    </div>
+  </p-card>
+</div>
