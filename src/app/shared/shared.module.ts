@@ -42,6 +42,7 @@ import { StyleClassModule } from 'primeng/styleclass';
 import { TableModule } from 'primeng/table';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { TabViewModule } from 'primeng/tabview';
+import { TieredMenuModule } from 'primeng/tieredmenu';
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
@@ -100,6 +101,7 @@ import { ImageModule } from 'primeng/image';
     InputTextareaModule,
     ChartModule,
     CardModule,
+    TieredMenuModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -150,6 +152,7 @@ import { ImageModule } from 'primeng/image';
     ConfirmPopupModule,
     ChartModule,
     CardModule,
+    TieredMenuModule,
   ],
   providers: [MessageService, ConfirmationService, DialogService],
 })

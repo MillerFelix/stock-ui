@@ -1,23 +1,17 @@
-<div>
-  <p-button>
-    <a class="nav-link" (click)="authService.signOut()"> Sair </a>
-  </p-button>
-</div>
-
 <div class="container">
   <p-card>
-    <div class="graphicValuesByType">
+    <div class="graph1">
       <h3>Quantidade por Tipo de Produto</h3>
       <p-chart
-        type="bar"
+        type="pie"
         [data]="dataGraphAmountByType"
         [options]="optionsGraphAmountByType"
       ></p-chart>
     </div>
   </p-card>
   <p-card>
-    <div class="graphicAmountByType">
-      <h3>Valor por Tipo de Produto</h3>
+    <div class="graph2">
+      <h3>Quantidade por Estado</h3>
       <p-chart
         type="doughnut"
         [data]="dataGraphValuesByType"
@@ -25,4 +19,50 @@
       ></p-chart>
     </div>
   </p-card>
+  <p-card>
+    <div class="graph3">
+      <h3>Quantidade por Categoria</h3>
+      <p-chart
+        type="pie"
+        [data]="dataGraphValuesByType"
+        [options]="optionsGraphValuesByType"
+      ></p-chart>
+    </div>
+  </p-card>
+
+  <p-card>
+    <div class="graph4">
+      <h3>Valor por Produto</h3>
+      <p-chart
+        type="bar"
+        [data]="dataGraphValuesByType"
+        [options]="optionsGraphValuesByType"
+      ></p-chart>
+    </div>
+  </p-card>
+  <div>
+    <p-card>
+      <div class="graph5">
+        <h3>Valor por Tipo de Produto</h3>
+        <p-chart
+          type="bar"
+          [data]="dataGraphValuesByType"
+          [options]="optionsGraphValuesByType"
+        ></p-chart>
+      </div>
+    </p-card>
+  </div>
+
+  <div>
+    <p-card>
+      <div class="graph6">
+        <h3>Quantidade de Produto por Fornecedor</h3>
+        <p-chart
+          type="bar"
+          [data]="dataGraphValuesByType"
+          [options]="optionsGraphValuesByType"
+        ></p-chart>
+      </div>
+    </p-card>
+  </div>
 </div>

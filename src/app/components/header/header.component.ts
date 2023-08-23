@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuItem } from 'primeng/api';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,13 +14,30 @@ import { SharedModule } from 'src/app/shared/shared.module';
 export class HeaderComponent implements OnInit {
   items: MenuItem[] | undefined;
 
+  authService = inject(AuthService);
+
   ngOnInit() {
     this.items = [
-      { label: 'Inicio', icon: 'pi pi-fw pi-home' },
-      { label: 'Fornecedores', icon: 'pi pi-fw pi-calendar' },
-      { label: 'Marcas', icon: 'pi pi-fw pi-pencil' },
-      { label: 'Produtos', icon: 'pi pi-fw pi-file' },
-      { label: 'Login', icon: 'pi pi-fw pi-cog' },
+      {
+        label: 'Dashboard',
+        icon: 'pi pi-fw pi-home',
+        routerLink: '/dashboard',
+      },
+      {
+        label: 'Produtos',
+        icon: 'pi pi-box',
+        routerLink: '/produtos',
+      },
+      {
+        label: 'Fornecedores',
+        icon: 'pi pi-fw pi-users',
+        routerLink: '/fornecedores',
+      },
+      {
+        label: 'Sair',
+        icon: 'pi pi-fw pi-power-off',
+        command: () => this.authService.signOut(),
+      },
     ];
   }
 }
