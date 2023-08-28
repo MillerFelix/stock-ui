@@ -1,3 +1,32 @@
-<div class="card">
-  <p-tabMenu [model]="items"></p-tabMenu>
-</div>
+<nav>
+  <div class="options">
+    <div class="logo">
+      <img src="assets/img/stock_2.png" alt="Logo" class="logo-image" />
+    </div>
+    <ul class="menu">
+      <li>
+        <a routerLink="/dashboard" routerLinkActive="active">
+          <span class="icone pi pi-chart-bar"></span> Dashboard
+        </a>
+      </li>
+      <li>
+        <a routerLink="/products" routerLinkActive="active">
+          <span class="icone pi pi-box"></span> Produtos
+        </a>
+      </li>
+      <li>
+        <a routerLink="/suppliers" routerLinkActive="active">
+          <span class="icone pi pi-truck"></span> Fornecedores
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="logout">
+    <p-toast></p-toast>
+    <p-menu #menu [model]="items" [popup]="true"></p-menu>
+    <button pButton type="button" (click)="menu.toggle($event)">
+      <i class="pi pi-sign-out"></i>
+    </button>
+  </div>
+</nav>

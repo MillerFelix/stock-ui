@@ -6,11 +6,13 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   userData: any;
+
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
@@ -32,10 +34,8 @@ export class AuthService {
   signIn(email: string, password: string) {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
-        });
+      .then((result: any) => {
+        localStorage.setItem('uid', result.user.uid);
         this.setUserData(result.user);
       })
       .catch((error) => {
@@ -91,7 +91,7 @@ export class AuthService {
 
   signOut() {
     return this.afAuth.signOut().then(() => {
-      localStorage.removeItem('user');
+      localStorage.clear();
       this.router.navigate(['sign-in']);
     });
   }

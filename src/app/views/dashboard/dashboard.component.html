@@ -11,21 +11,21 @@
   </p-card>
   <p-card>
     <div class="graph2">
-      <h3>Quantidade por Estado</h3>
+      <h3>Quantidade de Fornecedor por Estado</h3>
       <p-chart
         type="doughnut"
-        [data]="dataGraphValuesByType"
-        [options]="optionsGraphValuesByType"
+        [data]="dataGraphAmountByStates"
+        [options]="optionsGraphAmountByStates"
       ></p-chart>
     </div>
   </p-card>
   <p-card>
     <div class="graph3">
-      <h3>Quantidade por Categoria</h3>
+      <h3>Quantidade por Categoria de Fornecedor</h3>
       <p-chart
         type="pie"
-        [data]="dataGraphValuesByType"
-        [options]="optionsGraphValuesByType"
+        [data]="dataGraphAmountByCategory"
+        [options]="optionsGraphAmountByCategory"
       ></p-chart>
     </div>
   </p-card>
@@ -35,8 +35,8 @@
       <h3>Valor por Produto</h3>
       <p-chart
         type="bar"
-        [data]="dataGraphValuesByType"
-        [options]="optionsGraphValuesByType"
+        [data]="dataGraphProductsValues"
+        [options]="optionsGraphProductsValues"
       ></p-chart>
     </div>
   </p-card>
@@ -56,11 +56,11 @@
   <div>
     <p-card>
       <div class="graph6">
-        <h3>Quantidade de Produto por Fornecedor</h3>
+        <h3>Quantidade de Produtos por Fornecedor</h3>
         <p-chart
           type="bar"
-          [data]="dataGraphValuesByType"
-          [options]="optionsGraphValuesByType"
+          [data]="dataGraphAmountByProduct"
+          [options]="optionsGraphAmountByProduct"
         ></p-chart>
       </div>
     </p-card>

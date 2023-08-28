@@ -1,0 +1,53 @@
+nav {
+  background-color: #2b243b;
+  padding: 0.7rem 2rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.options {
+  display: flex;
+}
+
+.logo {
+  margin-right: 3rem;
+}
+
+.logo-image {
+  width: 12rem;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  text-decoration: none;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin-right: 2rem;
+  .icone {
+    margin-right: 0.4rem;
+  }
+}
+
+a {
+  color: rgb(194, 191, 191);
+}
+
+.active {
+  color: white;
+  font-weight: 600;
+}
+
+.logout {
+  button {
+    cursor: pointer;
+  }
+}

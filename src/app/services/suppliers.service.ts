@@ -12,7 +12,7 @@ export class SuppliersService {
 
   http = inject(HttpClient);
 
-  getCombinationSuppliers(): Observable<Supplier[]> {
+  getListSuppliers(): Observable<Supplier[]> {
     return this.http.get<Supplier[]>(this.API_STOCK_SUPPLIERS);
   }
 
@@ -30,9 +30,9 @@ export class SuppliersService {
     return this.http.get<Supplier>(`${this.API_STOCK_SUPPLIERS}/${id}`);
   }
 
-  filterSuppliersByCategory(id: string | number): Observable<Supplier[]> {
+  filterSuppliersByCategory(category: string): Observable<Supplier[]> {
     return this.http.get<Supplier[]>(
-      `${this.API_STOCK_SUPPLIERS}/category/${id}`
+      `${this.API_STOCK_SUPPLIERS}/category/${category}`
     );
   }
 
@@ -50,21 +50,15 @@ export class SuppliersService {
     });
   }
 
-  getGraphAmountByStates(): Observable<{ [key: string]: number }> {
-    return this.http.get<{ [key: string]: number }>(
-      `${this.API_STOCK_SUPPLIERS}/amount-state`
-    );
+  getGraphAmountByStates(): Observable<any> {
+    return this.http.get<any>(`${this.API_STOCK_SUPPLIERS}/amount-state`);
   }
 
-  getGraphAmountByCategory(): Observable<{ [key: string]: number }> {
-    return this.http.get<{ [key: string]: number }>(
-      `${this.API_STOCK_SUPPLIERS}/amount-category`
-    );
+  getGraphAmountByCategory(): Observable<any> {
+    return this.http.get<any>(`${this.API_STOCK_SUPPLIERS}/amount-category`);
   }
 
-  getGraphAmountByProducts(): Observable<{ [key: string]: number }> {
-    return this.http.get<{ [key: string]: number }>(
-      `${this.API_STOCK_SUPPLIERS}/amount-products`
-    );
+  getGraphAmountByProducts(): Observable<any> {
+    return this.http.get<any>(`${this.API_STOCK_SUPPLIERS}/amount-products`);
   }
 }

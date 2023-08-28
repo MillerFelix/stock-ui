@@ -25,7 +25,7 @@ export class ProductsComponent implements OnInit {
 
   loadProducts(): void {
     this.productsService
-      .getCombinationProducts()
+      .getListProducts()
       .subscribe((data) => (this.products = data));
   }
 
@@ -42,7 +42,7 @@ export class ProductsComponent implements OnInit {
   }
 
   createProduct(): void {
-    this.productsService.create(this.form.value).subscribe(() => {
+    this.productsService.createProduct(this.form.value).subscribe(() => {
       console.log('Produto Criado!');
     });
   }
